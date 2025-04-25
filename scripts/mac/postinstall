@@ -1,0 +1,2 @@
+#!/bin/bash
+ln -s /usr/local/orion/bin/orion /usr/local/bin/orion

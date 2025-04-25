@@ -1,0 +1,36 @@
+class List {
+    var _arr;
+    var _length;
+    List() {
+        this.arr = [];
+        this.length = 0;
+    }
+    size() {
+        return this.length;
+    }
+    add(item) {
+        this.expandArr();
+        this.arr[this.length] = item;
+        this.length = this.length + 1;
+        return this;
+    }
+    get(index) {
+        return this.arr[index];
+    }
+    expandArr() {
+        var newSize = this.length * 2 + 1;
+        var newArr = [nil]*(newSize);
+        for (var i = 0; i < this.length; i = i + 1) {
+            newArr[i] = this.arr[i];
+        }
+        this.arr = newArr;
+    }
+}
+var list = List();
+var size = list.size;
+println(size); //<class method 'size'>
+println(size()); //0
+list.add(1).add(2.64).add(true).add("hello");
+println(size()); //4
+println(list.get(3)); //hello
+//print(list.length); //error, can't access private fields    note: uncomment this line when error handling has been added to Rion language

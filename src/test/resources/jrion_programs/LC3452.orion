@@ -1,0 +1,13 @@
+var nums = [1,3,2,1,5,4];
+var n = nums.length();
+var k = 2;
+var sum = 0;
+for (var i = 0; i < n; i = i + 1) {
+    var l = (i - k < 0) or (nums[i] > (nums[i-k]));
+    var r = (i + k >= n) or (nums[i] > nums[i+k]);
+    if (l and r) {
+        sum = sum + nums[i];
+    }
+}
+
+println(sum);

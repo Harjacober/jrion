@@ -1,0 +1,16 @@
+fun twoSum(nums, target) {
+    var indexMap = {};
+
+    for (var i = 0; i < nums.length(); i = i + 1) {
+        var lookup = target - nums[i];
+        if (indexMap.containsKey(lookup)) {
+            return [indexMap[lookup], i];
+        }
+        indexMap[nums[i]] = i;
+
+    }
+    return [];
+}
+var nums = [2, 7, 11, 15];
+var target = 9;
+print(twoSum(nums, target));
